@@ -167,7 +167,7 @@ figure img {
     color: #FFFFFF;
     display: flex;
     justify-content: center;
-    width: 96%;
+    width: auto;
     padding: 2%;
     background-color: #0F76A0;
     height: 300px;/*Cambio de tamaño*/
@@ -239,3 +239,4 @@ figure img {
       transition-delay: 2s;
 
     }
+
