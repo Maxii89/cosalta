@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galería con Video Hover</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    .contenedor {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin: 50px auto;
+      flex-wrap: wrap;
+      position: relative;
+    }
+
+    .contenedor img {
+      width: 200px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 15px;
+      transition: transform 0.5s, opacity 0.5s;
+      cursor: pointer;
+    }
+
+    .contenedor img:hover {
+      transform: scale(1.1);
+      opacity: 0.8;
+    }
+
+    /* Video oculto */
+    .video {
+      position: absolute;
+      top: 180px; /* debajo de las imágenes */
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60%;
+      display: none;
+    }
+
+    .video video {
+      width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    }
+
+    /* Mostrar video cuando paso el mouse sobre la 3ra imagen */
+    .contenedor img:nth-child(3):hover ~ .video {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Galería de Imágenes con Video</h1>
+
+  <div class="contenedor">
+    <img src="img1.jpg" alt="Imagen 1">
+    <img src="img2.jpg" alt="Imagen 2">
+    <img src="img3.jpg" alt="Imagen 3">
+    <img src="img4.jpg" alt="Imagen 4">
+
+    <!-- Video oculto -->
+    <div class="video">
+      <video controls>
+        <source src="video.mp4" type="video/mp4">
+        Tu navegador no soporta el video.
+      </video>
+    </div>
+  </div>
+
+</body>
+</html>
