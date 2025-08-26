@@ -198,7 +198,7 @@ figure img {
 /*Transición de imágenes al pasar el mouse*/
 .contenedor {
      
-      width: 800px;   /* ancho del bloque */
+      width: auto;   /* ancho del bloque */
       height: 370px;  /* alto del bloque */
       margin: 50px auto;
       position: relative;
@@ -237,4 +237,5 @@ figure img {
     .contenedor:hover img:nth-child(4) {
       opacity: 1;
       transition-delay: 2s;
+
     }
