@@ -204,3 +204,92 @@ text-decoration: none;
         max-width: 32px; 
     }
 }
+
+
+/*GALERIA DE IMAGENES*/
+/* ===== Galería principal: 4 imágenes principales ===== */
+.contenedor {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    position: relative;
+    height: 400px; /* altura fija para todas las imágenes */
+    overflow: hidden;
+}
+
+.contenedor img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;           /* fuerza todas al mismo tamaño */
+    object-fit: cover;      /* rellena el contenedor, mantiene proporción */
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    z-index: 1;
+}
+
+/* Primera imagen visible */
+.contenedor img:first-child {
+    opacity: 1;
+    z-index: 1;
+}
+
+/* Secuencia al pasar el mouse */
+.contenedor:hover img:nth-child(1) { opacity: 0; }
+.contenedor:hover img:nth-child(2) { opacity: 1; z-index: 2; transition-delay: 0.3s; }
+.contenedor:hover img:nth-child(3) { opacity: 1; z-index: 3; transition-delay: 0.6s; }
+.contenedor:hover img:nth-child(4) { opacity: 1; z-index: 4; transition-delay: 0.9s; }
+
+/* ===== Productos destacados en 3 columnas ===== */
+#articulosprincipales article:nth-child(2) figure {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    justify-items: center;
+}
+
+#articulosprincipales article:nth-child(2) figure a img.destacado {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+#articulosprincipales article:nth-child(2) figure a img.destacado:hover {
+    transform: scale(1.05);
+    opacity: 0.8;
+}
+
+/* ===== Categorías en 3 columnas ===== */
+#articulosprincipales article:nth-child(3) figure {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    justify-items: center;
+}
+
+#articulosprincipales article:nth-child(3) figure a img.categorias {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+#articulosprincipales article:nth-child(3) figure a img.categorias:hover {
+    transform: scale(1.05);
+    opacity: 0.8;
+}
+
+/* ===== Responsive ===== */
+@media screen and (max-width: 768px) {
+    #articulosprincipales article:nth-child(2) figure,
+    #articulosprincipales article:nth-child(3) figure {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #articulosprincipales article:nth-child(2) figure,
+    #articulosprincipales article:nth-child(3) figure {
+        grid-template-columns: 1fr;
+    }
+}
