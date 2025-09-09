@@ -293,3 +293,9 @@ text-decoration: none;
         grid-template-columns: 1fr;
     }
 }
+.colores{
+    color: #ffffff;
+    text-align: center;
+    background-color: #019203;
+    
+}
